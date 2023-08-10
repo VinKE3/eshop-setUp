@@ -79,7 +79,7 @@ export const CartContextProvider = (props: Props) => {
         updatedCart = [product];
       }
 
-      toast.success("Product added to cart");
+      toast.success("Producto agregado al carrito");
       localStorage.setItem("eShopCartItems", JSON.stringify(updatedCart));
       return updatedCart;
     });
@@ -98,7 +98,7 @@ export const CartContextProvider = (props: Props) => {
           "eShopCartItems",
           JSON.stringify(filteredProducts)
         );
-        toast.success("Product removed");
+        toast.success("Producto removido del carrito");
       }
     },
     [cartProducts]
@@ -108,8 +108,8 @@ export const CartContextProvider = (props: Props) => {
     (product: CartProduct) => {
       let updatedCart;
 
-      if (product.quantity === 20) {
-        return toast.error("Oops! Maximum reached.");
+      if (product.quantity === 9) {
+        return toast.error("Oops! Maximo alcanzado.");
       }
 
       if (cartProducts) {
@@ -136,7 +136,7 @@ export const CartContextProvider = (props: Props) => {
       let updatedCart;
 
       if (product.quantity === 1) {
-        return toast.error("Oops! Minimum reached.");
+        return toast.error("Oops! Minimo un producto.");
       }
 
       if (cartProducts) {

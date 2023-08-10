@@ -48,7 +48,7 @@ const NavBar: React.FC<NavBarProps> = ({ currentUser }) => {
               <SearchBar />
             </div>
             <div className="flex items-center gap-8 md:gap-12">
-              {/* <CartCount /> */}
+              <CartCount />
               <UserMenu currentUser={currentUser} />
             </div>
           </div>

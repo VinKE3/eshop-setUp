@@ -52,10 +52,10 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
 
   const columns: GridColDef[] = [
     { field: "id", headerName: "ID", width: 220 },
-    { field: "name", headerName: "Name", width: 220 },
+    { field: "name", headerName: "Nombre", width: 220 },
     {
       field: "price",
-      headerName: "Price(USD)",
+      headerName: "Precio(ARS)",
       width: 100,
       renderCell: (params) => {
         return (
@@ -63,25 +63,25 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
         );
       },
     },
-    { field: "category", headerName: "Category", width: 100 },
-    { field: "brand", headerName: "Brand", width: 100 },
+    { field: "category", headerName: "Categoria", width: 100 },
+    { field: "brand", headerName: "Marca", width: 100 },
     {
       field: "inStock",
-      headerName: "inStock",
+      headerName: "Stock",
       width: 120,
       renderCell: (params) => {
         return (
           <div>
             {params.row.inStock === true ? (
               <Status
-                text="in stock"
+                text="Con Stock"
                 icon={MdDone}
                 bg="bg-teal-200"
                 color="text-teal-700"
               />
             ) : (
               <Status
-                text="out of stock"
+                text="Sin Stock"
                 icon={MdClose}
                 bg="bg-rose-200"
                 color="text-rose-700"
@@ -93,7 +93,7 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
     },
     {
       field: "action",
-      headerName: "Actions",
+      headerName: "Acciones",
       width: 200,
       renderCell: (params) => {
         return (
@@ -129,17 +129,17 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
         inStock: !inStock,
       })
       .then((res) => {
-        toast.success("Product stock changed");
+        toast.success("Stock Actualizado!");
         router.refresh();
       })
       .catch((err) => {
-        toast.error("Oops! Something went wrong");
+        toast.error("Oops! Error al actualizar el stock.");
         console.log(err);
       });
   }, []);
 
   const handleDelete = useCallback(async (id: string, images: any[]) => {
-    toast("Deleting product, please wait!", {
+    toast("Eliminando producto, por favor espere.", {
       icon: "🔃",
     });
 
@@ -149,11 +149,11 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
           if (item.image) {
             const imageRef = ref(storage, item.image);
             await deleteObject(imageRef);
-            console.log("Image deleted successfully.", item.image);
+            console.log("Imagen eliminada Correctamente.", item.image);
           }
         }
       } catch (err) {
-        return console.log("Deleting images error", err);
+        return console.log("Error al eliminar Imagen", err);
       }
     };
 
@@ -162,11 +162,11 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
     axios
       .delete(`/api/product/${id}`)
       .then((res) => {
-        toast.success("Product deleted!");
+        toast.success("Producto Eliminado!");
         router.refresh();
       })
       .catch((err) => {
-        toast.error("Oops! Error when deleting a product.");
+        toast.error("Oops! Error al eliminar el producto.");
         console.log(err);
       });
   }, []);
@@ -174,7 +174,7 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
   return (
     <div className="max-w-[1150px] m-auto text-xl">
       <div className="mb-4 mt-8">
-        <Heading title="Manage Products" center />
+        <Heading title="Manejar Productos" center />
       </div>
       <div style={{ height: 600, width: "100%" }}>
         <DataGrid

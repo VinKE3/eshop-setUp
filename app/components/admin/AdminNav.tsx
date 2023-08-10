@@ -37,34 +37,34 @@ const AdminNav = () => {
             overflow-x-auto flex-nowrap
             "
         >
-          <Link href="/admin">
+          {/* <Link href="/admin">
             <AdminNavItem
               label="Sumario"
               icon={MdDashboard}
               selected={pathname === "/admin" ? true : false}
             />
-          </Link>
+          </Link> */}
           <Link href="/admin/add-products">
             <AdminNavItem
-              label="Productos"
+              label="Agregar"
               icon={MdLibraryAdd}
               selected={pathname === "/admin/add-products" ? true : false}
             />
           </Link>
           <Link href="/admin/manage-products">
             <AdminNavItem
-              label="Manejo Productos"
+              label="Ver Productos"
               icon={MdDns}
               selected={pathname === "/admin/manage-products" ? true : false}
             />
           </Link>
-          <Link href="/admin/manage-orders">
+          {/* <Link href="/admin/manage-orders">
             <AdminNavItem
               label="Ordenes"
               icon={MdFormatListBulleted}
               selected={pathname === "/admin/manage-orders"}
             />
-          </Link>
+          </Link> */}
         </div>
       </Container>
     </div>

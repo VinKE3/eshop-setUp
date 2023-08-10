@@ -33,9 +33,14 @@ const CartClient: React.FC<CurrentUserProps> = ({ currentUser }) => {
     );
   }
 
+  const handleCheckoutClick = () => {
+    const url = "https://w.app/ecommerceJesus";
+    window.open(url, "_blank");
+  };
+
   return (
     <div>
-      <h2 className="text-2xl text-center mb-8">Shopping Cart</h2>
+      <h2 className="text-2xl text-center mb-8">Carrito de Compras</h2>
       <div
         className="grid
       grid-cols-5
@@ -44,9 +49,9 @@ const CartClient: React.FC<CurrentUserProps> = ({ currentUser }) => {
       pb-2
       items-center"
       >
-        <div className="col-span-2 justify-self-start">PRODUCT</div>
-        <div className="justify-self-center">PRICE</div>
-        <div className="justify-self-center">QUANTITY</div>
+        <div className="col-span-2 justify-self-start">PRODUCTO</div>
+        <div className="justify-self-center">PRECIO</div>
+        <div className="justify-self-center">CANTIDAD</div>
         <div className="justify-self-end">TOTAL</div>
       </div>
       <div>
@@ -61,7 +66,7 @@ const CartClient: React.FC<CurrentUserProps> = ({ currentUser }) => {
       >
         <div className="w-[90px]">
           <Button
-            label="Clear Cart"
+            label="Limpiar Carrito"
             onClick={() => {
               handleClearCart();
             }}
@@ -75,21 +80,19 @@ const CartClient: React.FC<CurrentUserProps> = ({ currentUser }) => {
             <span>${cartTotalAmount}</span>
           </div>
           <p className="text-slate-500">
-            Taxes and shipping calculated at checkout
+            Impuesto ya incluido en el precio de los productos
           </p>
           <Button
-            label={currentUser ? "Checkout" : "Login To Checkout"}
-            outline={currentUser ? false : true}
-            onClick={() => {
-              currentUser ? router.push("/checkout") : router.push("/login");
-            }}
+            label="Comprar"
+            outline
+            onClick={() => handleCheckoutClick()}
           />
           <Link
             href={"/"}
             className="text-slate-500 flex items-center gap-1 mt-2"
           >
             <MdArrowBack />
-            <span>Continue Shopping</span>
+            <span>Continuar Comprando</span>
           </Link>
         </div>
       </div>

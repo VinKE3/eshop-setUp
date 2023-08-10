@@ -16,19 +16,21 @@ const Footer = () => {
           <FooterList>
             <h3 className="text-base font-bold mb-2">Categorias</h3>
             <Link href="/?category=Teléfono">Teléfono</Link>
-            <Link href="#">NoteBooks</Link>
-            <Link href="#">Desktops</Link>
-            <Link href="#">Watches</Link>
-            <Link href="#">TVs</Link>
-            <Link href="#">Accessories</Link>
+            <Link href="/?category=NoteBooks">NoteBooks</Link>
+            <Link href="/?category=Desktop">Desktops</Link>
+            <Link href="/?category=Watch">Watches</Link>
+            <Link href="/?category=TV">TVs</Link>
+            <Link href="/?category=Otros">Otros</Link>
           </FooterList>
           <FooterList>
-            <h3 className="text-base font-bold mb-2">Customer Service</h3>
-            <Link href="#">Contact Us</Link>
-            <Link href="#">Shipping Policy</Link>
+            <h3 className="text-base font-bold mb-2">Atención al Cliente</h3>
+            <Link href="https://w.app/ecommerceJesus">
+              Contactanos por Whatsapp
+            </Link>
+            {/* <Link href="#">Shipping Policy</Link>
             <Link href="#">Returns & Exchanges</Link>
             <Link href="#">Watches</Link>
-            <Link href="#">FAQs</Link>
+            <Link href="#">FAQs</Link> */}
           </FooterList>
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h3 className="text-base font-bold mb-2">Nosotros</h3>

@@ -80,8 +80,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   );
 
   const handleQtyIncrease = useCallback(() => {
-    if (cartProduct.quantity === 20) {
-      return toast.error("Oops! Maximum reached.");
+    if (cartProduct.quantity === 9) {
+      return toast.error("Oops! Maximo Alcanzado.");
     }
 
     setCartProduct((prev) => {
@@ -91,7 +91,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
   const handleQtyDecrease = useCallback(() => {
     if (cartProduct.quantity === 1) {
-      return toast.error("Oops! Minimum reached.");
+      return toast.error("Oops! Minimo un producto");
     }
 
     setCartProduct((prev) => {
@@ -123,24 +123,24 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         <div className="text-justify">{product.description}</div>
         <HorizontalLine />
         <div>
-          <span className="font-semibold">CATEGORY:</span> {product.category}
+          <span className="font-semibold">CATEGORIA:</span> {product.category}
         </div>
         <div>
-          <span className="font-semibold">BRAND:</span> {product.brand}
+          <span className="font-semibold">MARCA:</span> {product.brand}
         </div>
         <div className={product.inStock ? "text-teal-400" : "text-rose-400"}>
-          {product.inStock ? "In stock" : "Out of stock"}
+          {product.inStock ? "Con Stock" : "Sin Stock"}
         </div>
         <HorizontalLine />
         {isProductInCart ? (
           <>
             <p className="mb-2 text-slate-500 flex items-center gap-1">
               <MdCheckCircle className="text-teal-400" size={20} />
-              <span>Product added to cart</span>
+              <span>Producto agregado al carrito</span>
             </p>
             <div className="max-w-[300px]">
               <Button
-                label="View Cart"
+                label="Ver Carrito"
                 outline
                 onClick={() => {
                   router.push("/cart");
@@ -156,20 +156,36 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
               handleColorSelect={handleColorSelect}
             />
             <HorizontalLine />
-            <SetQuantity
-              cartProduct={cartProduct}
-              handleQtyIncrease={handleQtyIncrease}
-              handleQtyDecrease={handleQtyDecrease}
-            />
-            <HorizontalLine />
-            <div className="max-w-[300px]">
-              <Button
-                label="Add To Cart"
-                onClick={() => {
-                  handleAddProductToCart(cartProduct);
-                }}
-              />
-            </div>
+            {product.inStock ? (
+              <>
+                <SetQuantity
+                  cartProduct={cartProduct}
+                  handleQtyIncrease={handleQtyIncrease}
+                  handleQtyDecrease={handleQtyDecrease}
+                />
+                <HorizontalLine />
+                <div className="max-w-[300px]">
+                  <Button
+                    label="Agregar al Carrito"
+                    onClick={() => {
+                      handleAddProductToCart(cartProduct);
+                    }}
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="max-w-[300px]">
+                  <Button
+                    label="Volver al Inicio"
+                    outline
+                    onClick={() => {
+                      router.push("/");
+                    }}
+                  />
+                </div>
+              </>
+            )}
           </>
         )}
       </div>
