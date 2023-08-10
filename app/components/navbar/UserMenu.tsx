@@ -78,7 +78,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                     signOut();
                   }}
                 >
-                  Logout
+                  Salir
                 </MenuItem>
               </div>
             ) : (
