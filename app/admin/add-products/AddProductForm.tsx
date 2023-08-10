@@ -193,10 +193,10 @@ const AddProductForm = () => {
 
   return (
     <>
-      <Heading title="Add a Product" center />
+      <Heading title="Agregar Producto" center />
       <Input
         id="name"
-        label="Name"
+        label="Nombre"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -204,7 +204,7 @@ const AddProductForm = () => {
       ></Input>
       <Input
         id="price"
-        label="Price"
+        label="Precio"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -213,7 +213,7 @@ const AddProductForm = () => {
       ></Input>
       <Input
         id="brand"
-        label="Brand"
+        label="Marca"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -221,7 +221,7 @@ const AddProductForm = () => {
       ></Input>
       <TextArea
         id="description"
-        label="Description"
+        label="Descripción"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -230,10 +230,10 @@ const AddProductForm = () => {
       <CustomCheckBox
         id="inStock"
         register={register}
-        label="This product is in stock"
+        label="Producto en Stock"
       />
       <div className="w-full font-medium">
-        <div className="mb-2 font-semibold">Select a Category</div>
+        <div className="mb-2 font-semibold">Seleccionar una Categoria</div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-h-[50vh] overflow-y-auto">
           {categories.map((item) => {
             if (item.label === "All") {
@@ -256,11 +256,12 @@ const AddProductForm = () => {
       <div className="w-full flex flex-col flex-wrap gap-4">
         <div>
           <div className="font-semibold">
-            Select the available product colors and upload their images.
+            Elige los colores disponibles del producto y sube sus imágenes
+            correspondientes.
           </div>
           <ul className="text-sm">
-            You must upload an image for each of the color selected otherwise
-            your color selection will be ignored.
+            Debes subir una imagen para cada uno de los colores seleccionados,
+            de lo contrario, tu elección de color será ignorada.
           </ul>
         </div>
         <div className="grid grid-cols-2 gap-3">
@@ -278,7 +279,7 @@ const AddProductForm = () => {
         </div>
       </div>
       <Button
-        label={isLoading ? "Loading..." : "Add Product"}
+        label={isLoading ? "Cargando..." : "Agregar Producto"}
         onClick={handleSubmit(onSubmit)}
       />
     </>

@@ -11,11 +11,11 @@ export const categories = [
     icon: MdStorefront,
   },
   {
-    label: "Phone",
+    label: "Teléfono",
     icon: AiFillMobile,
   },
   {
-    label: "Laptop",
+    label: "NoteBooks",
     icon: AiOutlineLaptop,
   },
   {
@@ -31,7 +31,7 @@ export const categories = [
     icon: MdTv,
   },
   {
-    label: "Accesories",
+    label: "Otros",
     icon: MdOutlineKeyboard,
   },
 ];

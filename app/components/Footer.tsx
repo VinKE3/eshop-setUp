@@ -14,8 +14,8 @@ const Footer = () => {
       <Container>
         <div className="flex flex-col md:flex-row justify-between pt-16 pb-8">
           <FooterList>
-            <h3 className="text-base font-bold mb-2">Shop Categories</h3>
-            <Link href="#">Phones</Link>
+            <h3 className="text-base font-bold mb-2">Categorias</h3>
+            <Link href="/?category=Teléfono">Teléfono</Link>
             <Link href="#">Laptops</Link>
             <Link href="#">Desktops</Link>
             <Link href="#">Watches</Link>
