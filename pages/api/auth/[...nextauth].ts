@@ -52,15 +52,15 @@ export const authOptions: AuthOptions = {
       },
     }),
   ],
-  secret: process.env.SECRET,
   pages: {
     signIn: "/login",
   },
-  debug: process.env.NODE_ENV === "development",
+  debug: process.env.NODE_ENV === "production",
   session: {
     strategy: "jwt",
   },
   // secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.SECRET,
 };
 
 export default NextAuth(authOptions);
