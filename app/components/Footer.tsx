@@ -16,7 +16,7 @@ const Footer = () => {
           <FooterList>
             <h3 className="text-base font-bold mb-2">Categorias</h3>
             <Link href="/?category=Teléfono">Teléfono</Link>
-            <Link href="#">Laptops</Link>
+            <Link href="#">NoteBooks</Link>
             <Link href="#">Desktops</Link>
             <Link href="#">Watches</Link>
             <Link href="#">TVs</Link>
