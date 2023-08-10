@@ -31,18 +31,18 @@ const Footer = () => {
             <Link href="#">FAQs</Link>
           </FooterList>
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
-            <h3 className="text-base font-bold mb-2">About Us</h3>
+            <h3 className="text-base font-bold mb-2">Nosotros</h3>
             <p className="mb-2">
-              At our electronics store, we are dedicated to providing the latest
-              and greatest devices and accessories to our customers. With a wide
-              selection of phones, TVs, laptops, watches, and accessories.
+              Somos una empresa dedicada a la venta de productos tecnológicos
+              con más de 10 años de experiencia en el mercado.
             </p>
             <p className="text-sm">
-              &copy; {new Date().getFullYear()} E~Shop. All rights reserved.
+              &copy; {new Date().getFullYear()} E-Commerce. Todos los derechos
+              reservados.
             </p>
           </div>
           <FooterList>
-            <h3 className="text-base font-bold mb-2">Follow Us</h3>
+            <h3 className="text-base font-bold mb-2">Redes Sociales</h3>
             <div className="flex gap-2">
               <Link href="#">
                 <MdFacebook size={24} />
