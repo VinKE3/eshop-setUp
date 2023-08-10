@@ -34,7 +34,7 @@ const CartClient: React.FC<CurrentUserProps> = ({ currentUser }) => {
   }
 
   const handleCheckoutClick = () => {
-    const url = "https://w.app/ecommerceJesus";
+    const url = " https://w.app/uqe5G6";
     window.open(url, "_blank");
   };
 
