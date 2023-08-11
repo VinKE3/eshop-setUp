@@ -1,5 +1,4 @@
 "use client";
-
 import ActionBtn from "@/app/components/ActionBtn";
 import Heading from "@/app/components/Heading";
 import Status from "@/app/components/Status";
@@ -122,21 +121,24 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
     },
   ];
 
-  const handleToggleStock = useCallback((id: string, inStock: boolean) => {
-    axios
-      .put("/api/product", {
-        id,
-        inStock: !inStock,
-      })
-      .then((res) => {
-        toast.success("Stock Actualizado!");
-        router.refresh();
-      })
-      .catch((err) => {
-        toast.error("Oops! Error al actualizar el stock.");
-        console.log(err);
-      });
-  }, []);
+  const handleToggleStock = useCallback(
+    (id: string, inStock: boolean) => {
+      axios
+        .put("/api/product", {
+          id,
+          inStock: !inStock,
+        })
+        .then((res) => {
+          toast.success("Stock Actualizado!");
+          router.refresh();
+        })
+        .catch((err) => {
+          toast.error("Oops! Error al actualizar el stock.");
+          console.log(err);
+        });
+    },
+    [router]
+  );
 
   const handleDelete = useCallback(async (id: string, images: any[]) => {
     toast("Eliminando producto, por favor espere.", {

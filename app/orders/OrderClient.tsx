@@ -145,7 +145,7 @@ const OrdersClient: React.FC<OrdersClientProps> = ({ orders }) => {
     },
   ];
 
-  if (!orders) return <NullData title="Oops! No orders yet." />;
+  if (!orders) return <NullData title="Oops! No existe ordenes todavia." />;
 
   return (
     <div className="max-w-[900px] m-auto text-xl">

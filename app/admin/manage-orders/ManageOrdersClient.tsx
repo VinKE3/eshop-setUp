@@ -171,7 +171,7 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
         router.refresh();
       })
       .catch((err) => {
-        toast.error("Oops! Something went wrong");
+        toast.error("Oops! Algo Salio Mal");
         console.log(err);
       });
   }, []);
@@ -187,7 +187,7 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
         router.refresh();
       })
       .catch((err) => {
-        toast.error("Oops! Something went wrong");
+        toast.error("Oops! Algo Salio Mal");
         console.log(err);
       });
   }, []);
